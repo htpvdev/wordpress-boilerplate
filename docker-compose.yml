@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  app:
+    build:
+      context: ./docker/php/Dockerfile
+    ports:
+      - 80:80
+    volumes:
+      - ./src:/work/src
+
+  db:
+    image: mysql:8
+    environment:
+      MYSQL_USER: 'phper'
+      MYSQL_PASSWORD: 'secret'
+      MYSQL_DATABASE: 'wordpress_local'
+      MYSQL_ROOT_PASSWORD: 'secret'
+      TZ: 'Asia/Tokyo'
+    ports:
+      - 33060:3306
+    volumes:
+      - db-store:/var/lib/mysql
+
+volumes:
+  db-store:
