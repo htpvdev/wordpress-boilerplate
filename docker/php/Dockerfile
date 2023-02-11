@@ -28,5 +28,6 @@ RUN apt-get update && \
 
 COPY ./docker/php/php.ini /usr/local/etc/php/php.ini
 # COPY ./infra/php/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
+COPY ./docker/apache/httpd.conf /etc/apache2/sites-available/000-default.conf
 
 WORKDIR /work/src
