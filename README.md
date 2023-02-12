@@ -10,5 +10,11 @@
 Dockerをインストールする
 docker-compose.ymlを、プロジェクトを作るディレクトリにコピーして
 `docker compose up -d --build` コマンドを実行すれば完了。
-[localhost](localhost)を開けば、WordPressが開けます。
+http://localhost を開けば、WordPressが開けます。
 終了するときは、`docker compose down`で終了します。
+
+## 参考
+
+https://docs.docker.jp/compose/wordpress.html
+https://zenn.dev/persona/articles/50f87da99c92af
+https://github.com/github/gitignore/blob/main/WordPress.gitignore
