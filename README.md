@@ -8,7 +8,7 @@
 ## 使い方(ローカル開発環境の起動方法)
 
 Dockerをインストールする
-docker-compose.ymlを、プロジェクトを作るディレクトリにコピーして
+docker-compose.ymlを、プロジェクトを作るディレクトリにコピーして  
 `docker compose up -d --build` コマンドを実行すれば完了。  
 http://localhost を開けば、WordPressが開けます。  
 終了するときは、`docker compose down`で終了します。  
