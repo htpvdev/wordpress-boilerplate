@@ -21,6 +21,6 @@ smaple-usecaseブランチで、実際のプロジェクトのサンプルを確
 
 ## 参考
 
-https://docs.docker.jp/compose/wordpress.html
-https://zenn.dev/persona/articles/50f87da99c92af
-https://github.com/github/gitignore/blob/main/WordPress.gitignore
+https://docs.docker.jp/compose/wordpress.html  
+https://zenn.dev/persona/articles/50f87da99c92af  
+https://github.com/github/gitignore/blob/main/WordPress.gitignore  
