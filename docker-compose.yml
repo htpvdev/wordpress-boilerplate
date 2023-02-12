@@ -1,26 +1,29 @@
-version: "3.8"
+version: '3'
+
 services:
-  app:
-    build:
-      context: .
-      dockerfile: ./docker/php/Dockerfile
-    ports:
-      - 80:80
-    volumes:
-      - ./src:/work/src
-
   db:
-    image: mysql:8
-    environment:
-      MYSQL_USER: 'phper'
-      MYSQL_PASSWORD: 'secret'
-      MYSQL_DATABASE: 'wordpress_local'
-      MYSQL_ROOT_PASSWORD: 'secret'
-      TZ: 'Asia/Tokyo'
-    ports:
-      - 33060:3306
+    image: mysql:5.7
     volumes:
-      - db-store:/var/lib/mysql
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: somewordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
 
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:latest
+    volumes:
+      - ./html:/var/www/html # マウントするディレクトリを指定
+    ports:
+      - "80:80"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
 volumes:
-  db-store:
+  db_data:
